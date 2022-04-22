@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:photo_view/photo_view_gallery.dart';
-import 'package:image_picker/image_picker.dart';
+
 
 void main() async {
   runApp(Page01());
-    // MaterialApp(debugShowCheckedModeBanner: false, initialRoute: '/', routes: {
-    //   '/': (context) => RouteOne(),
-    //   '/detail': (context) => RouteTwo(image: ''),
-    // }),
+  // MaterialApp(debugShowCheckedModeBanner: false, initialRoute: '/', routes: {
+  //   '/': (context) => RouteOne(),
+  //   '/detail': (context) => RouteTwo(image: ''),
+  // }),
 
 }
 class Page01 extends StatelessWidget{
@@ -17,11 +16,12 @@ class Page01 extends StatelessWidget{
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Page01'),
+            title: Text('首頁'),
           ),
-          body: _Page01()
-      ),
-    );
+          body: new _Page01(),)
+
+      );
+
   }
 }
 
@@ -29,10 +29,26 @@ class Page01 extends StatelessWidget{
 class _Page01 extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      child: Text('Go to Page02'),
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children:<Widget> [
+          Container(child: Text(" Hello teacher ",style: TextStyle(fontSize: 60))),
+          Container(
+      child:RaisedButton(//   child:Rase
+      splashColor: Colors.pinkAccent,
+      color: Colors.black,
+
+      child: new Text("去gridview",style: new TextStyle(fontSize: 20.0,color: Colors.white),),
       onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => RouteOne()));},
-    );
+    )),
+          Container(
+      child:RaisedButton(//   child:Rase
+      splashColor: Colors.pinkAccent,
+      color: Colors.black,
+      child: new Text("去photoview",style: new TextStyle(fontSize: 20.0,color: Colors.white),),
+      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => RouteTwo(image: RouteOne().images1.last)));},
+      ))]);
   }
 }
 
@@ -131,9 +147,9 @@ class RouteTwo extends StatelessWidget {
           AspectRatio(
             aspectRatio: 1,
             child: Container(
-              width: double.infinity,
+                width: double.infinity,
 
-              child: imgBrowser
+                child: imgBrowser
 
 
               //     Image(
@@ -202,7 +218,6 @@ class _ImageBrowserState extends State<_ImageBrowser> {
     setState(() {});
   }
 }
-
 
 
 

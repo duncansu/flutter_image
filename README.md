@@ -1,5 +1,7 @@
 # flutter_image
 老師我已經盡力了。我一直以為左右手勢是按鈕 希望你能刀下留人。
+後面我又加了兩個raisebutton 作為首頁分別為可以到gridview 另一個則是能直接到 photoview 的第一張
+希望這樣能有加分的作用
 408631363 蘇宇堂 留
 
 ## Getting Started
